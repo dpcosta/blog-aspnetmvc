@@ -27,18 +27,12 @@ namespace Blog.Controllers
             return View();
         }
 
-        //GET: Home/OlaMundoCSharp
-        public ActionResult OlaMundoCSharp()
+        //GET: Home/OlaMundo
+        public ActionResult OlaMundo(string linguagem)
         {
-            ViewBag.Linguagem = "C#";
+            ViewBag.Linguagem = linguagem;
             return View("Index");
         }
 
-        //GET: Home/OlaMundoJavascript
-        public ActionResult OlaMundoJavascript()
-        {
-            ViewBag.Linguagem = "Javascript";
-            return View("Index");
-        }
     }
 }
