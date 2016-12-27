@@ -1,6 +1,8 @@
 ﻿using Blog.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,13 +14,26 @@ namespace Blog.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            var listaDePosts = new List<Post>()
+            var listaDePosts = new List<Post>();
+
+            using (SqlConnection cnx = new SqlConnection("connection string"))
             {
-                new Post() { Titulo = "Harry Potter 1", Resumo = "Pedra Filosofal", Categoria = "Filme, Livro" },
-                new Post() { Titulo = "Cassino Royale", Resumo = "007", Categoria = "Filme" },
-                new Post() { Titulo = "Monge e o Executivo", Resumo = "Romance sobre Liderança", Categoria = "Livro" },
-                new Post() { Titulo = "New York, New York", Resumo = "Sucesso de Frank Sinatra", Categoria = "Música" }
-            };
+                cnx.Open();
+                SqlCommand selectCmd = cnx.CreateCommand();
+                selectCmd.CommandText = "select * from Post";
+
+                SqlDataReader resultado = selectCmd.ExecuteReader();
+                while (resultado.Read())
+                {
+                    new Post() {
+                        Titulo = Convert.ToString(resultado["titulo"]),
+                        Resumo = Convert.ToString(resultado["resumo"]),
+                        Categoria = Convert.ToString(resultado["categoria"])
+                    };
+                };
+
+            }
+
             ViewBag.Posts = listaDePosts;
             return View();
         }
