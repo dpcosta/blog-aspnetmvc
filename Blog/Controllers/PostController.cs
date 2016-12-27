@@ -43,5 +43,12 @@ namespace Blog.Controllers
             ViewBag.Posts = dao.ListaPostsDaCategoria(categoria);
             return View("Index");
         }
+
+        public ActionResult Remover(int id)
+        {
+            dao.Remove(id);
+            return RedirectToAction("Index");
+        }
+        
     }
 }

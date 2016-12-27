@@ -31,5 +31,12 @@ namespace Blog.DAL
             var posts = from p in context.Posts where p.Categoria.Contains(categoria) select p;
             return posts.ToList();
         }
+
+        public void Remove(int id)
+        {
+            Post p = context.Posts.Find(id);
+            context.Posts.Remove(p);
+            context.SaveChanges();
+        }
     }
 }

@@ -20,6 +20,7 @@
                     <th>Título</th>
                     <th>Resumo</th>
                     <th>Categoria</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                         <td>@p.Titulo</td>
                         <td>@p.Resumo</td>
                         <td>@Html.ActionLink(p.Categoria, "Categoria", new { categoria = p.Categoria })</td>
+                        <td>@Html.ActionLink("Remover", "Remover", new { id = p.Id })</td>
                     </tr>
                 }
             </tbody>
