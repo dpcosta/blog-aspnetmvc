@@ -13,8 +13,8 @@
             <li><a href="/">Início</a></li>
             <li><a href="/Home">Página Inicial</a></li>
             <li><a href="/Home/Index">Mesma página inicial</a></li>
-            <li><a href="/Home/About">Sobre</a></li>
-            <li><a href="/Home/Categorias">Categorias</a></li>
+            <li>@Html.ActionLink("Sobre","About")</li>
+            <li>@Html.ActionLink("Categorias","Categorias")</li>
         </ul>
 
         <form action="/Home/OlaMundo">
