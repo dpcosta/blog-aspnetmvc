@@ -1,4 +1,5 @@
-﻿using Blog.Models;
+﻿using Blog.DAL;
+using Blog.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +17,7 @@ namespace Blog.Controllers
         {
             var listaDePosts = new List<Post>();
 
-            using (SqlConnection cnx = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Blog.mdf;Integrated Security=True"))
+            using (SqlConnection cnx = ConnectionFactory.CreateConnection())
             {
                 cnx.Open();
                 SqlCommand selectCmd = cnx.CreateCommand();
@@ -46,7 +47,7 @@ namespace Blog.Controllers
 
         public ActionResult Adiciona(Post p)
         {
-            using (SqlConnection cnx = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Blog.mdf;Integrated Security=True"))
+            using (SqlConnection cnx = ConnectionFactory.CreateConnection())
             {
                 cnx.Open();
                 SqlCommand insertCmd = cnx.CreateCommand();
