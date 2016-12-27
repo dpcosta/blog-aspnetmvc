@@ -38,6 +38,7 @@ namespace Blog.Controllers
             return View();
         }
 
+        [Route("Post/Categoria/{categoria}")]
         public ActionResult Categoria(string categoria)
         {
             ViewBag.Posts = dao.ListaPostsDaCategoria(categoria);
