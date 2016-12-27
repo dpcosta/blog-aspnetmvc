@@ -26,5 +26,10 @@ namespace Blog.DAL
             context.SaveChanges();
         }
 
+        public IList<Post> ListaPostsDaCategoria(string categoria)
+        {
+            var posts = from p in context.Posts where p.Categoria.Contains(categoria) select p;
+            return posts.ToList();
+        }
     }
 }

@@ -37,5 +37,11 @@ namespace Blog.Controllers
             ViewBag.Titulo = p.Titulo;
             return View();
         }
+
+        public ActionResult Categoria(string categoria)
+        {
+            ViewBag.Posts = dao.ListaPostsDaCategoria(categoria);
+            return View("Index");
+        }
     }
 }
