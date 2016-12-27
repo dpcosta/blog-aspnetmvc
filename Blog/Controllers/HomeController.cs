@@ -11,6 +11,7 @@ namespace Blog.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Linguagem = "ASP.NET MVC";
             return View();
         }
 
@@ -24,6 +25,20 @@ namespace Blog.Controllers
         public ActionResult Categorias()
         {
             return View();
+        }
+
+        //GET: Home/OlaMundoCSharp
+        public ActionResult OlaMundoCSharp()
+        {
+            ViewBag.Linguagem = "C#";
+            return View("Index");
+        }
+
+        //GET: Home/OlaMundoJavascript
+        public ActionResult OlaMundoJavascript()
+        {
+            ViewBag.Linguagem = "Javascript";
+            return View("Index");
         }
     }
 }
