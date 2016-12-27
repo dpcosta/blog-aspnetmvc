@@ -18,6 +18,11 @@
             Título: <input name="Titulo" value="@ViewBag.Post.Titulo"/><br />
             Resumo: <input name="Resumo" value="@ViewBag.Post.Resumo"/><br />
             Categoria: <input name="Categoria" value="@ViewBag.Post.Categoria" /><br />
+            <fieldset>
+                <legend>Publicação:</legend>
+                Data: <input name="DataPublicacao" type="datetime" value="@ViewBag.Post.DataPublicacao" /><br />
+                Realizado? <input name="Publicado" type="checkbox" checked="checked" value="@ViewBag.Post.Publicado" /><br /> 
+            </fieldset>
             <input type="submit" value="Gravar" />
         </form>
     </div>
