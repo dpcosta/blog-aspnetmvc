@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Novo</title>
+</head>
+<body>
+    <div> 
+        <h1>Novo Post</h1>
+        <form action="@Url.Action("Adiciona")">
+            Título: <input name="Titulo" /><br />
+            Resumo: <input name="Resumo" /><br />
+            Categoria: <input name="Categoria" /><br />
+            <input type="submit" value="Gravar" />
+        </form>
+    </div>
+</body>
+</html>
