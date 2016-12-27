@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Blog.Controllers
 {
@@ -15,13 +11,15 @@ namespace Blog.Controllers
             return View();
         }
 
-        // GET: Home/About
+        // GET: /About
+        [Route("Sobre")]
         public ActionResult About()
         {
             return View();
         }
 
-        // GET: Home/Categorias
+        // GET: /Categorias
+        [Route("Categorias")]
         public ActionResult Categorias()
         {
             return View();
