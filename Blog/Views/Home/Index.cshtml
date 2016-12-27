@@ -17,7 +17,7 @@
             <li>@Html.ActionLink("Categorias","Categorias")</li>
         </ul>
 
-        <form action="/Home/OlaMundo">
+        <form action="@Url.Action("OlaMundo")">
             Linguagem: <input name="linguagem" /><input type="submit" value="Diga Oi" />
         </form>
     </div>

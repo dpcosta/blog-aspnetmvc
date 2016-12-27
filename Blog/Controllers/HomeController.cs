@@ -25,7 +25,8 @@ namespace Blog.Controllers
             return View();
         }
 
-        //GET: Home/OlaMundo
+        //GET: /OlaMundo
+        [Route("OlaMundo")]
         public ActionResult OlaMundo(string linguagem)
         {
             ViewBag.Linguagem = linguagem;
