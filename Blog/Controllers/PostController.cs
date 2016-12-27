@@ -12,11 +12,11 @@ namespace Blog.Controllers
 {
     public class PostController : Controller
     {
-        private PostDAO dao;
+        private PostEFDAO dao;
 
         public PostController()
         {
-            this.dao = new PostDAO();
+            this.dao = new PostEFDAO();
         }
 
         // GET: Post
