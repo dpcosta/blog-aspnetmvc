@@ -27,7 +27,7 @@
                 @foreach (Blog.Models.Post p in ViewBag.Posts)
                 {
                     <tr>
-                        <td>@p.Titulo</td>
+                        <td>@Html.ActionLink(p.Titulo,"Visualiza", new { id = p.Id })</td>
                         <td>@p.Resumo</td>
                         <td>@Html.ActionLink(p.Categoria, "Categoria", new { categoria = p.Categoria })</td>
                         <td>@Html.ActionLink("Remover", "Remover", new { id = p.Id })</td>

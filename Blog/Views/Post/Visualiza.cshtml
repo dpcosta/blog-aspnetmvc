@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Visualiza</title>
+</head>
+<body>
+    <div> 
+        <h1>Ver Post</h1>
+        <form action="@Url.Action("Atualiza")">
+            <input type="hidden" name="Id" value="@ViewBag.Post.Id" />
+            Título: <input name="Titulo" value="@ViewBag.Post.Titulo"/><br />
+            Resumo: <input name="Resumo" value="@ViewBag.Post.Resumo"/><br />
+            Categoria: <input name="Categoria" value="@ViewBag.Post.Categoria" /><br />
+            <input type="submit" value="Gravar" />
+        </form>
+    </div>
+</body>
+</html>

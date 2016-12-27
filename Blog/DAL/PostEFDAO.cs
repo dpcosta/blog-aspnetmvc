@@ -38,5 +38,16 @@ namespace Blog.DAL
             context.Posts.Remove(p);
             context.SaveChanges();
         }
+
+        public Post BuscaPeloId(int id)
+        {
+            return context.Posts.Find(id);
+        }
+
+        public void Atualiza(Post p)
+        {
+            context.Entry(p).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
+        }
     }
 }

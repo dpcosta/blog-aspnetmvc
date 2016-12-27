@@ -50,6 +50,18 @@ namespace Blog.Controllers
             dao.Remove(id);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Visualiza(int id)
+        {
+            ViewBag.Post = dao.BuscaPeloId(id);
+            return View();
+        }
+
+        public ActionResult Atualiza(Post p)
+        {
+            dao.Atualiza(p);
+            return RedirectToAction("Index");
+        }
         
     }
 }
